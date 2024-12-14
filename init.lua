@@ -32,6 +32,12 @@ lsp.clangd.setup { coq.lsp_ensure_capabilities {
 }
 } 
 
+lsp.vale_ls.setup { coq.lsp_ensure_capabilities {
+    cmd = {'vale-ls'}, 
+    filetypes = { "markdown", "text", "tex", "rst" },
+}
+} 
+
 local bufopts = { noremap = true, silent = true, buffer = bufnr }
 vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
@@ -45,3 +51,9 @@ vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' 
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
 
 require('deadcolumn').setup()
+
+-- Custom keymaps
+vim.keymap.set('n', '<leader>va', 
+               "<cmd>! vale-a <cword> <cr>", 
+               { desc = 'Add word to Vale global accept.txt' })
+
