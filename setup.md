@@ -1,5 +1,6 @@
 Other requirements
 - clangd https://clangd.llvm.org/installation.html
+    - use 'global' format file at ~/.clang-format
 - universal-ctags (for COQ)
 - ripgrep (for telescope)
 - fd (for telescope)

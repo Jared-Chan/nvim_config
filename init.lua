@@ -52,8 +52,15 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help ta
 
 require('deadcolumn').setup()
 
--- Custom keymaps
+-- Custom keymaps --
+
 vim.keymap.set('n', '<leader>va', 
                "<cmd>! vale-a <cword> <cr>", 
                { desc = 'Add word to Vale global accept.txt' })
+
+vim.keymap.set("n", "]g", vim.diagnostic.goto_next, { desc = 'Go to next LSP error' })
+vim.keymap.set("n", "[g", vim.diagnostic.goto_prev, { desc = 'Go to prev LSP error' })
+
+vim.keymap.set('n', '<leader>F', "<cmd>lua vim.lsp.buf.format()<CR>", 
+                { desc = 'Format current file'})
 
