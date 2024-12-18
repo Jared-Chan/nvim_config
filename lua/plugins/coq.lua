@@ -28,10 +28,6 @@ return {
         config = function()
           -- Your LSP settings here
           return {
-            -- cmd = {'clangd', '--background-index', '--clang-tidy'}, -- '--log=verbose'},
-            -- init_options = {
-            -- fallbackFlags = { '-std=c++17' },
-            -- },
           }
         end,
       }

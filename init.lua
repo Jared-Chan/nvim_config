@@ -27,7 +27,7 @@ lsp.clangd.setup { coq.lsp_ensure_capabilities {
     cmd = {'clangd', '--background-index', '--clang-tidy'}, -- '--log=verbose'},
     filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
     init_options = {
-      fallbackFlags = { '-std=c++17' },
+      fallbackFlags = { '-std=c++20' },
     },
 }
 } 

@@ -18,6 +18,8 @@ set.showmatch = true -- show matching parenthese
 set.incsearch = true -- search as characters are entered 
 set.hlsearch = true -- highlight mathches
 
+vim.g.mapleader = "," 
+
 set.colorcolumn = "80" -- deadcolumn
 
 
