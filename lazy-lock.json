@@ -8,10 +8,10 @@
   "gitsigns.nvim": { "branch": "main", "commit": "5f808b5e4fef30bd8aca1b803b4e555da07fc412" },
   "lazy.nvim": { "branch": "main", "commit": "7e6c863bc7563efbdd757a310d17ebc95166cef3" },
   "lualine.nvim": { "branch": "master", "commit": "2a5bae925481f999263d6f5ed8361baef8df4f83" },
-  "nvim-lspconfig": { "branch": "master", "commit": "9f2c279cf9abe584f03bfeb37c6658d68e3ff49d" },
+  "nvim-lspconfig": { "branch": "master", "commit": "b54abeb8b90af1cb4592ce937ee95ed8cb457801" },
   "nvim-tree.lua": { "branch": "master", "commit": "375e38673b5c61debd8074ced01cfd4f3b7ce1e9" },
-  "nvim-treesitter": { "branch": "master", "commit": "d20db847aaa5c023a040e8453b4dd82b00f8dcfd" },
-  "nvim-web-devicons": { "branch": "master", "commit": "0eb18da56e2ba6ba24de7130a12bcc4e31ad11cb" },
+  "nvim-treesitter": { "branch": "master", "commit": "caba7ef3556079dec03407bcbb290ddc688ea06e" },
+  "nvim-web-devicons": { "branch": "master", "commit": "15c7d0f616ebf88960ce5c4221828f62789d36d9" },
   "plenary.nvim": { "branch": "master", "commit": "2d9b06177a975543726ce5c73fca176cedbffe9d" },
   "telescope.nvim": { "branch": "master", "commit": "a0bbec21143c7bc5f8bb02e0005fa0b982edc026" }
 }

@@ -38,6 +38,15 @@ lsp.vale_ls.setup { coq.lsp_ensure_capabilities {
 }
 } 
 
+lsp.verible.setup{ coq.lsp_ensure_capabilities {
+    cmd = {'vale-ls'}, 
+    filetypes = { "markdown", "text", "tex", "rst" },
+    root_dir = function(fname)
+      return vim.fs.dirname(vim.fs.find('.git', { path = fname, upward = true })[1])
+    end,
+}
+} 
+
 local bufopts = { noremap = true, silent = true, buffer = bufnr }
 vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
