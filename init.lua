@@ -39,13 +39,24 @@ lsp.vale_ls.setup { coq.lsp_ensure_capabilities {
 } 
 
 lsp.verible.setup{ coq.lsp_ensure_capabilities {
-    cmd = {'vale-ls'}, 
-    filetypes = { "markdown", "text", "tex", "rst" },
+    cmd = { "verible-verilog-ls" },
+    filetypes = { "systemverilog", "verilog" },
     root_dir = function(fname)
       return vim.fs.dirname(vim.fs.find('.git', { path = fname, upward = true })[1])
     end,
 }
 } 
+
+lsp.ruff.setup{ coq.lsp_ensure_capabilities {
+    cmd = {"ruff", "server"}, 
+    filetypes = { "python" },
+    init_options = {
+      settings = {
+        -- Server settings should go here
+      }
+    }
+}
+}
 
 local bufopts = { noremap = true, silent = true, buffer = bufnr }
 vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
@@ -72,4 +83,12 @@ vim.keymap.set("n", "[g", vim.diagnostic.goto_prev, { desc = 'Go to prev LSP err
 
 vim.keymap.set('n', '<leader>F', "<cmd>lua vim.lsp.buf.format()<CR>", 
                 { desc = 'Format current file'})
+
+vim.filetype.add({
+  pattern = {
+    ['.*/*.fs'] = 'glsl',
+    ['.*/*.vs'] = 'glsl',
+    ['.*/*.gs'] = 'glsl',
+  },
+})
 

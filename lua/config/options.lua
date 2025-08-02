@@ -22,3 +22,5 @@ set.colorcolumn = "80" -- deadcolumn
 
 
 vim.cmd.colorscheme "catppuccin-mocha"
+
+
