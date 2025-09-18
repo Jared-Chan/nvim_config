@@ -20,34 +20,37 @@ require('barbar').setup {
     -- }
 }
 
-local lsp = require "lspconfig"
 local coq = require "coq"
 
-lsp.clangd.setup { coq.lsp_ensure_capabilities {
+vim.lsp.config("clangd", coq.lsp_ensure_capabilities {
     cmd = {'clangd', '--background-index', '--clang-tidy'}, -- '--log=verbose'},
     filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
     init_options = {
       fallbackFlags = { '-std=c++20' },
     },
 }
-} 
+)
+vim.lsp.enable("clangd")
+ 
 
-lsp.vale_ls.setup { coq.lsp_ensure_capabilities {
+vim.lsp.config("vale_ls", coq.lsp_ensure_capabilities {
     cmd = {'vale-ls'}, 
     filetypes = { "markdown", "text", "tex", "rst" },
 }
-} 
+) 
+vim.lsp.enable("vale_ls")
 
-lsp.verible.setup{ coq.lsp_ensure_capabilities {
+vim.lsp.config("verible", coq.lsp_ensure_capabilities {
     cmd = { "verible-verilog-ls" },
     filetypes = { "systemverilog", "verilog" },
     root_dir = function(fname)
       return vim.fs.dirname(vim.fs.find('.git', { path = fname, upward = true })[1])
     end,
 }
-} 
+) 
+vim.lsp.enable("verible")
 
-lsp.ruff.setup{ coq.lsp_ensure_capabilities {
+vim.lsp.config("ruff", coq.lsp_ensure_capabilities {
     cmd = {"ruff", "server"}, 
     filetypes = { "python" },
     init_options = {
@@ -56,7 +59,8 @@ lsp.ruff.setup{ coq.lsp_ensure_capabilities {
       }
     }
 }
-}
+)
+vim.lsp.enable("ruff")
 
 local bufopts = { noremap = true, silent = true, buffer = bufnr }
 vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
